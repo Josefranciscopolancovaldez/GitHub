@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Recurso Humano</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Estilo/StyleSheet.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        
+        <div class="container">
+            <div class="navbar-header">
+                <img src="~/Content/Imagen/rh.png" alt="Recurso Humano" width="150" height="50"/>
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Mantenimiento", "Matenimiento", "Home")</li>
+                    <li>@Html.ActionLink("Procesos", "Procesos", "Home")</li>
+                    <li>@Html.ActionLink("Informe", "Informes", "Home")</li>
+                    <li>@Html.ActionLink("Sobre nosotros", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
